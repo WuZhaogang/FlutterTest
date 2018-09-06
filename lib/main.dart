@@ -6,6 +6,7 @@ import 'package:myapp/base/GSYPullLoadWidget.dart';
 import 'package:myapp/model/BaseResp.dart';
 import 'package:myapp/model/UserModel.dart';
 import 'package:myapp/ui/NewPage.dart';
+import 'package:myapp/ui/TestPage1.dart';
 
 void main() => runApp(new MyApp());
 
@@ -155,7 +156,7 @@ class _MyHomePageState extends GSYListState<MyHomePage>
   }
 
   void onItemClick(UserModel userModel) {
-    Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new NewPage()));
+    Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new TestPage1("我草草草")));
   }
 
   @override
