@@ -42,11 +42,11 @@ class NewPageState extends State<NewPage> with SingleTickerProviderStateMixin {
       ),
       body: new TabBarView(
           children: <Widget>[
-            new TestPage(),
-            new TestPage(),
-            new TestPage(),
-            new TestPage(),
-            new TestPage()
+            new TestPage(""),
+            new TestPage(""),
+            new TestPage(""),
+            new TestPage(""),
+            new TestPage("")
           ]
           , controller: _controller
       ),
