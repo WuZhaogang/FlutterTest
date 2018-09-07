@@ -158,8 +158,8 @@ class _MyHomePageState extends GSYListState<MyHomePage>
   }
 
   void onItemClick(UserModel userModel) {
-//    Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new NewPage("PageView&BottomNavgationBar")));
-    Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new ScrollPage("ScrollView联动效果测试")));
+    Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new NewPage("PageView&BottomNavgationBar")));
+//    Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new ScrollPage("ScrollView联动效果测试")));
   }
 
   @override
