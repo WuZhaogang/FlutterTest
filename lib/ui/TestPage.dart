@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,29 +23,39 @@ class TestPageState extends State<TestPage>{
   TestPageState(this.title);
 
   static const jumpPlugin = const MethodChannel('com.wzg.jump/plugin');
+  static const iosJumpPlugin = const MethodChannel(
+      'samples.flutter.io/battery');
 
   Future<Null> _jumpToNative() async {
-    String result = await jumpPlugin.invokeMethod('acOne');
-
-    print(result);
+    if (Platform.isIOS) {
+      iosJumpPlugin.invokeMethod("asdasd");
+    } else {
+      String result = await jumpPlugin.invokeMethod('acOne');
+      print(result);
+    }
   }
 
 
   @override
   Widget build(BuildContext context) {
-    return new GestureDetector(
-      onTap: (){
-        _jumpToNative();
-      },
-      child: new Container(
-        color: Colors.green,
-        child: new Column(
-          children: <Widget>[
-            new Text("dasdasdasdasd"),
-            new Text("dasdasdasdasd"),
-            new Text("dasdasdasdasd"),
-            new Text("dasdasdasdasd")
-          ],
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("dasdasd"),
+      ),
+      body: new GestureDetector(
+        onTap: () {
+          _jumpToNative();
+        },
+        child: new Container(
+          color: Colors.green,
+          child: new Column(
+            children: <Widget>[
+              new Text("dasdasdasdasd"),
+              new Text("dasdasdasdasd"),
+              new Text("dasdasdasdasd"),
+              new Text("dasdasdasdasd")
+            ],
+          ),
         ),
       ),
     );
